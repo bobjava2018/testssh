@@ -1,0 +1,12 @@
+server:
+  address: localhost
+  port: 8080
+
+
+logging:
+  level:
+    com.marry: info
+  path: E:/marrylog/info/info.log
+  file:
+    max-size: 10mb
+    max-history: 1
