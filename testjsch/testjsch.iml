@@ -10,7 +10,16 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://D:/autotest/jsch-0.1.53.jar!/" />
+          <root url="jar://$MODULE_DIR$/../jar/jsch-0.1.53.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../jar/log4j-1.2.17.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

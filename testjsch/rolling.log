@@ -1,0 +1,5 @@
+[framework] 2019-10-27 18:33:07,793 - com.bob.smalltool.TestSshSendCommand -22   [main] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：java.net.UnknownHostException: 192.168.0,106
+[framework] 2019-10-27 18:33:36,834 - com.bob.smalltool.TestSshSendCommand -1021 [main] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：java.net.ConnectException: Connection refused: connect
+[framework] 2019-10-27 18:34:23,785 - com.bob.smalltool.TestSshSendCommand -1031 [main] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：java.net.ConnectException: Connection refused: connect
+[framework] 2019-10-27 18:44:27,148 - com.bob.smalltool.TestSshSendCommand -1025 [main] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：java.net.ConnectException: Connection refused: connect
+[framework] 2019-11-02 12:15:20,546 - com.bob.smalltool.TestSshSendCommand -21066 [main] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：java.net.ConnectException: Connection timed out: connect
