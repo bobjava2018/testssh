@@ -26,11 +26,11 @@ public class TestSshSendCommand {
     private final String ENCODEING = "UTF-8";
 
     public static void main(String[] args) {
-        logger.info("开始了");
+
         TestSshSendCommand testSshSendCommand = new TestSshSendCommand();
 
         try {
-            testSshSendCommand.creatConnection();
+            testSshSendCommand.creatConnection( "192.168.0.107","baibo1","4069630");
             testSshSendCommand.execCommand();
         } catch (Exception e) {
             e.printStackTrace();
@@ -40,15 +40,16 @@ public class TestSshSendCommand {
 
     }
 
-    public boolean creatConnection() {
+    public boolean creatConnection(String ip,String user,String pwd) {
         logger.info("开始连接了");
 
         try {
             jSch = new JSch();
-            session = jSch.getSession("baibo", "192.168.0.107", 22);
+            //session = jSch.getSession("baibo0", "192.168.0.107", 22);
+            session = jSch.getSession(user, ip, 22);
             session.setConfig("StrictHostKeyChecking", "no");//第一次访问服务器时候不需要输入yes
-            session.setPassword("406963");
-            session.setTimeout(60 * 50 * 1000);
+            session.setPassword(pwd);
+            session.setTimeout(10*1000);
             session.connect();
             channelShell = (ChannelShell) session.openChannel("shell");
 

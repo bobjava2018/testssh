@@ -3,3 +3,14 @@
 [framework] 2019-10-27 18:34:23,785 - com.bob.smalltool.TestSshSendCommand -1031 [main] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：java.net.ConnectException: Connection refused: connect
 [framework] 2019-10-27 18:44:27,148 - com.bob.smalltool.TestSshSendCommand -1025 [main] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：java.net.ConnectException: Connection refused: connect
 [framework] 2019-11-02 12:15:20,546 - com.bob.smalltool.TestSshSendCommand -21066 [main] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：java.net.ConnectException: Connection timed out: connect
+[framework] 2019-11-04 22:54:55,991 - com.bob.smalltool.TestSshSendCommand -2736 [main] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：Auth fail
+[framework] 2019-11-04 23:07:32,873 - com.bob.smalltool.TestSshSendCommand -2028 [main] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：Auth fail
+[framework] 2019-11-04 23:07:52,217 - com.bob.smalltool.TestSshSendCommand -1998 [main] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：Auth fail
+[framework] 2019-11-04 23:08:41,924 - com.bob.smalltool.TestSshSendCommand -21028 [main] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：java.net.ConnectException: Connection timed out: connect
+[framework] 2019-11-04 23:09:04,981 - com.bob.smalltool.TestSshSendCommand -6025 [main] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：timeout: socket is not established
+[framework] 2019-11-04 23:09:28,167 - com.bob.smalltool.TestSshSendCommand -6023 [main] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：timeout: socket is not established
+[framework] 2019-11-04 23:15:24,429 - com.bob.smalltool.TestSshSendCommand -10026 [main] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：timeout: socket is not established
+[framework] 2019-11-04 23:17:01,251 - com.bob.smalltool.TestSshSendCommand -3031 [main] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：Auth fail
+[framework] 2019-11-04 23:29:00,960 - com.bob.smalltool.TestSshSendCommand -2731 [main] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：Auth fail
+[framework] 2019-11-04 23:30:39,069 - com.bob.smalltool.TestSshSendCommand -10025 [AWT-EventQueue-0] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：timeout: socket is not established
+[framework] 2019-11-04 23:34:07,354 - com.bob.smalltool.TestSshSendCommand -10021 [AWT-EventQueue-0] ERROR com.bob.smalltool.TestSshSendCommand  - 连接失败，请检查是否可以访问：timeout: socket is not established

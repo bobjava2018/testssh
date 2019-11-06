@@ -1,6 +1,11 @@
 package com.bob.smalltool;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
+import org.apache.log4j.Logger;
+
 import javax.swing.*;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
 import javax.swing.text.JTextComponent;
 import java.awt.*;
 import java.awt.event.FocusEvent;
@@ -9,6 +14,10 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class SmallPanel {
+
+
+    private static Logger logger = Logger.getLogger(SmallPanel.class);
+
     public JLabel jLabelRegex;
     public JFrame jFrame;
     public JPanel jPanel;
@@ -52,6 +61,18 @@ public class SmallPanel {
     public static void main(String[] args) {
         SmallPanel smallPanel=new SmallPanel();
         smallPanel.createPanel();
+        smallPanel.print();
+    }
+    public void print(){
+//        for(int i=0;i<=100;i++){
+//            textArea.append("11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111,");
+//            try {
+//                Thread.sleep(1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            textArea.paintImmediately(textArea.getBounds());
+//        }
     }
     public  void  createPanel(){
         //创建JFrame实例
@@ -84,9 +105,8 @@ public class SmallPanel {
          ipBeginText.setBounds(290,50,200,30);
          ipBeginText.setText(fileUtil.get("ipBegain").trim());
          jPanel.add(ipBeginText);
-         ipStyleCheck(ipBeginText);
-
-
+         leaveSpace(ipBeginText);//去空格
+         regexLisenerIp(ipBeginText);//ip输入校验
          //结束IP
          JLabel ipEnd=new JLabel("结束IP");
          ipEnd.setBounds(610,50,50,30);
@@ -97,21 +117,22 @@ public class SmallPanel {
          ipEndText.setBounds(670,50,200,30);
          ipEndText.setText(fileUtil.get("ipEnd").trim());
          jPanel.add(ipEndText);
-         ipStyleCheck(ipEndText);
-
+         leaveSpace(ipEndText);//去空格
+         regexLisenerIp(ipEndText);//ip输入校验
 
          //虚拟机IP
          JLabel vmIp=new JLabel("VMIP");
          vmIp.setBounds(240,110,50,30);
          jPanel.add(vmIp);
 
+
          //需要登陆的虚拟机框
          ipVm=new JTextField("",28);
          ipVm.setBounds(290,110,200,30);
          ipVm.setText(fileUtil.get("ipVm").trim());
          jPanel.add(ipVm);
-         ipStyleCheck(ipVm);
-
+         leaveSpace(ipVm);//去空格
+         regexLisenerIp(ipVm);//ip输入校验
 
          //虚拟机用户名
          JLabel vmUser=new JLabel("VM用户名");
@@ -122,6 +143,7 @@ public class SmallPanel {
          vmUserText=new JTextField("",28);
          vmUserText.setBounds(670,110,200,30);
          vmUserText.setText(fileUtil.get("vmUser").trim());
+         leaveSpace(vmUserText);//去空格
          jPanel.add(vmUserText);
 
 
@@ -134,13 +156,14 @@ public class SmallPanel {
          vmPwdText=new JPasswordField("",28);
          vmPwdText.setBounds(1040,110,200,30);
          vmPwdText.setText(fileUtil.get("vmPwd").trim());
+         leaveSpace(vmPwdText);//去空格
          jPanel.add(vmPwdText);
          //单选框
          vmPwdRadio = new JRadioButton("隐藏密码");
          vmPwdRadio.setSelected(true);
          vmPwdRadio.setBounds(1270,110,200,30);
          jPanel.add(vmPwdRadio,vmPwdText);
-         ipStyleCheck(vmPwdRadio,vmPwdText);
+         ipStyleCheck(vmPwdRadio,vmPwdText);//密码显示不显示监控
 
          //fs虚拟机IP
          JLabel fsIp=new JLabel("FSIP");
@@ -152,8 +175,8 @@ public class SmallPanel {
          fsVm.setBounds(290,170,200,30);
          fsVm.setText(fileUtil.get("fsIp").trim());
          jPanel.add(fsVm);
-         ipStyleCheck(fsVm);
-
+         leaveSpace(fsVm);//去空格
+         regexLisenerIp(fsVm);//ip输入校验
 
          //fs虚拟机用户名
          JLabel fsUser=new JLabel("FS用户名");
@@ -164,6 +187,7 @@ public class SmallPanel {
           fsUserText=new JTextField("",28);
          fsUserText.setBounds(670,170,200,30);
          fsUserText.setText(fileUtil.get("fsUser").trim());
+         leaveSpace(fsUserText);//去空格
          jPanel.add(fsUserText);
 
 
@@ -177,6 +201,8 @@ public class SmallPanel {
          fsPwdText.setBounds(1040,170,200,30);
          fsPwdText.setText(fileUtil.get("fsPwd").trim());
          jPanel.add(fsPwdText);
+         leaveSpace(fsPwdText);//去空格
+
          //单选框
          fsPwdRadio = new JRadioButton("隐藏密码");
          fsPwdRadio.setSelected(true);
@@ -189,7 +215,7 @@ public class SmallPanel {
          jButton=new JButton("开始");
          jButton.setBounds(290,240,100,30);
          jPanel.add(jButton);
-
+         ipStyleCheck(jButton);
          jButtonStop=new JButton("停止");
          jButtonStop.setBounds(450,240,100,30);
          jPanel.add(jButtonStop);
@@ -245,13 +271,30 @@ public class SmallPanel {
                       jPanel.repaint();
                       jFrame.setVisible(true);
                   }
+                 //点击开始 测试 连通性
+                 if(component instanceof JButton){
+                     if(((JButton) component).getText().contains("开始")){
+                         String message=testConnect(getVmInfo());
+                         if(message.contains("timeout")){
+                             JOptionPane.showMessageDialog(component, "请检查虚拟机的IP是否可以访问", "提示", JOptionPane.INFORMATION_MESSAGE);
+
+                         }
+
+                         if(message.contains("Auth fail")){
+                             JOptionPane.showMessageDialog(component, "请检查虚拟机的账号密码是否正确", "提示", JOptionPane.INFORMATION_MESSAGE);
+
+                         }
+
+                     }
+                 }
+
+
              }
 
              @Override
              public void mousePressed(MouseEvent e) {
 
              }
-
              @Override
              public void mouseReleased(MouseEvent e) {
 
@@ -288,4 +331,87 @@ public class SmallPanel {
          });
 
       }
+
+      //用于判断IP输入是否合法  不合法给出提示 ，并将末尾的内容去掉
+      public  void  regexLisenerIp(JTextField textField){
+         textField.addCaretListener(new CaretListener() {
+             @Override
+             public void caretUpdate(CaretEvent e) {
+                 JTextField textField = (JTextField) e.getSource(); // 获得触发事件的 JTextField
+                 String text = textField.getText();
+                 if (text.length() == 0) {
+                     return;
+                 }
+                 char ch = text.charAt(text.length() - 1);
+                 if (!(ch >= '0' && ch <= '9' || ch >= 'A' && ch <= 'F' ||ch=='.'||ch==':'||ch >= 'a' && ch <= 'f')){
+                     JOptionPane.showMessageDialog(textField, "只能输入 . : 0-9 A-F a-f 这些字符", "提示", JOptionPane.INFORMATION_MESSAGE);
+                     SwingUtilities.invokeLater(new Runnable() {
+                         @Override
+                         public void run() {
+                             //去掉JtextFiled末尾字符
+                             textField.setText(text.substring(0, text.length() - 1));
+                         }
+                     });
+                 }
+             }
+         });
+
+      }
+
+    //用于输入时去除空格
+    public  void  leaveSpace(JTextComponent textField){
+        textField.addCaretListener(new CaretListener() {
+            @Override
+            public void caretUpdate(CaretEvent e) {
+                JTextField textField = (JTextField) e.getSource(); // 获得触发事件的 JTextField
+                String text = textField.getText();
+                if (text.length() == 0) {
+                    return;
+                }
+
+                char ch = text.charAt(text.length() - 1);
+                char chb=text.charAt(0);
+                if ( ch == ' '|| chb==' '){
+                    SwingUtilities.invokeLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            //去掉JtextFiled末尾字符
+                            textField.setText(text.trim());
+                        }
+                    });
+                }
+            }
+        });
+
+    }
+
+     //检查连接信息
+    public String  testConnect(String [] info){
+         boolean[] flags=new boolean[2];
+        TestSshSendCommand vmconn=null;
+        String message="";
+         try{
+             vmconn =new TestSshSendCommand();
+             vmconn.creatConnection(info[0],info[1],info[2]);
+         }catch (Exception e){
+               message=e.getMessage();
+               logger.info("连接报错信息："+message);//timeout: socket is not established  ip不可访问，直接超时
+                                                    //Auth fail   账号或密码错误
+         }finally{
+             if(vmconn!=null)
+              vmconn.closeConnection();
+         }
+        return message;
+    }
+
+    //获取VMip  user  pwd
+    public  String [] getVmInfo(){
+
+         return new String[]{ipVm.getText().trim(),vmUserText.getText().trim(),vmPwdText.getText().trim()};
+    }
+    //获取fsip  user  pwd
+    public  String [] getFsInfo(){
+
+        return new String[]{fsVm.getText().trim(),fsUserText.getText().trim(),fsPwdText.getText().trim()};
+    }
 }

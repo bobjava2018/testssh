@@ -206,3 +206,81 @@
 2019-11-02 12:15:20  [ main:21066 ] - [ ERROR ]  连接失败，请检查是否可以访问：java.net.ConnectException: Connection timed out: connect
 2019-11-02 12:15:20  [ main:21066 ] - [ INFO ]  准备执行命令
 2019-11-02 12:15:20  [ main:21066 ] - [ INFO ]  准备执行命令
+2019-11-04 20:50:38  [ main:0 ] - [ INFO ]  开始了
+2019-11-04 20:50:38  [ main:0 ] - [ INFO ]  开始了
+2019-11-04 20:50:38  [ main:1 ] - [ INFO ]  开始连接了
+2019-11-04 20:50:38  [ main:1 ] - [ INFO ]  开始连接了
+2019-11-04 22:54:39  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 22:54:39  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 22:54:40  [ main:828 ] - [ INFO ]  session创建成功
+2019-11-04 22:54:40  [ main:828 ] - [ INFO ]  session创建成功
+2019-11-04 22:54:40  [ main:828 ] - [ INFO ]  准备执行命令
+2019-11-04 22:54:40  [ main:828 ] - [ INFO ]  准备执行命令
+2019-11-04 22:54:53  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 22:54:53  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 22:54:55  [ main:2736 ] - [ ERROR ]  连接失败，请检查是否可以访问：Auth fail
+2019-11-04 22:54:55  [ main:2736 ] - [ ERROR ]  连接失败，请检查是否可以访问：Auth fail
+2019-11-04 22:54:56  [ main:2749 ] - [ INFO ]  准备执行命令
+2019-11-04 22:54:56  [ main:2749 ] - [ INFO ]  准备执行命令
+2019-11-04 23:07:13  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:07:13  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:07:14  [ main:825 ] - [ INFO ]  session创建成功
+2019-11-04 23:07:14  [ main:825 ] - [ INFO ]  session创建成功
+2019-11-04 23:07:14  [ main:826 ] - [ INFO ]  准备执行命令
+2019-11-04 23:07:14  [ main:826 ] - [ INFO ]  准备执行命令
+2019-11-04 23:07:30  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:07:30  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:07:32  [ main:2028 ] - [ ERROR ]  连接失败，请检查是否可以访问：Auth fail
+2019-11-04 23:07:32  [ main:2028 ] - [ ERROR ]  连接失败，请检查是否可以访问：Auth fail
+2019-11-04 23:07:32  [ main:2029 ] - [ INFO ]  准备执行命令
+2019-11-04 23:07:32  [ main:2029 ] - [ INFO ]  准备执行命令
+2019-11-04 23:07:50  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:07:50  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:07:52  [ main:1998 ] - [ ERROR ]  连接失败，请检查是否可以访问：Auth fail
+2019-11-04 23:07:52  [ main:1998 ] - [ ERROR ]  连接失败，请检查是否可以访问：Auth fail
+2019-11-04 23:07:52  [ main:1999 ] - [ INFO ]  准备执行命令
+2019-11-04 23:07:52  [ main:1999 ] - [ INFO ]  准备执行命令
+2019-11-04 23:08:20  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:08:20  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:08:41  [ main:21028 ] - [ ERROR ]  连接失败，请检查是否可以访问：java.net.ConnectException: Connection timed out: connect
+2019-11-04 23:08:41  [ main:21028 ] - [ ERROR ]  连接失败，请检查是否可以访问：java.net.ConnectException: Connection timed out: connect
+2019-11-04 23:08:41  [ main:21029 ] - [ INFO ]  准备执行命令
+2019-11-04 23:08:41  [ main:21029 ] - [ INFO ]  准备执行命令
+2019-11-04 23:08:58  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:08:58  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:09:04  [ main:6025 ] - [ ERROR ]  连接失败，请检查是否可以访问：timeout: socket is not established
+2019-11-04 23:09:04  [ main:6025 ] - [ ERROR ]  连接失败，请检查是否可以访问：timeout: socket is not established
+2019-11-04 23:09:04  [ main:6026 ] - [ INFO ]  准备执行命令
+2019-11-04 23:09:04  [ main:6026 ] - [ INFO ]  准备执行命令
+2019-11-04 23:09:22  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:09:22  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:09:28  [ main:6023 ] - [ ERROR ]  连接失败，请检查是否可以访问：timeout: socket is not established
+2019-11-04 23:09:28  [ main:6023 ] - [ ERROR ]  连接失败，请检查是否可以访问：timeout: socket is not established
+2019-11-04 23:09:28  [ main:6024 ] - [ INFO ]  准备执行命令
+2019-11-04 23:09:28  [ main:6024 ] - [ INFO ]  准备执行命令
+2019-11-04 23:15:14  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:15:14  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:15:24  [ main:10026 ] - [ ERROR ]  连接失败，请检查是否可以访问：timeout: socket is not established
+2019-11-04 23:15:24  [ main:10026 ] - [ ERROR ]  连接失败，请检查是否可以访问：timeout: socket is not established
+2019-11-04 23:15:24  [ main:10026 ] - [ INFO ]  准备执行命令
+2019-11-04 23:15:24  [ main:10026 ] - [ INFO ]  准备执行命令
+2019-11-04 23:16:58  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:16:58  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:17:01  [ main:3031 ] - [ ERROR ]  连接失败，请检查是否可以访问：Auth fail
+2019-11-04 23:17:01  [ main:3031 ] - [ ERROR ]  连接失败，请检查是否可以访问：Auth fail
+2019-11-04 23:17:01  [ main:3032 ] - [ INFO ]  准备执行命令
+2019-11-04 23:17:01  [ main:3032 ] - [ INFO ]  准备执行命令
+2019-11-04 23:28:58  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:28:58  [ main:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:29:00  [ main:2731 ] - [ ERROR ]  连接失败，请检查是否可以访问：Auth fail
+2019-11-04 23:29:00  [ main:2731 ] - [ ERROR ]  连接失败，请检查是否可以访问：Auth fail
+2019-11-04 23:29:00  [ main:2732 ] - [ INFO ]  准备执行命令
+2019-11-04 23:29:00  [ main:2732 ] - [ INFO ]  准备执行命令
+2019-11-04 23:30:29  [ AWT-EventQueue-0:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:30:29  [ AWT-EventQueue-0:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:30:39  [ AWT-EventQueue-0:10025 ] - [ ERROR ]  连接失败，请检查是否可以访问：timeout: socket is not established
+2019-11-04 23:30:39  [ AWT-EventQueue-0:10025 ] - [ ERROR ]  连接失败，请检查是否可以访问：timeout: socket is not established
+2019-11-04 23:33:57  [ AWT-EventQueue-0:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:33:57  [ AWT-EventQueue-0:0 ] - [ INFO ]  开始连接了
+2019-11-04 23:34:07  [ AWT-EventQueue-0:10021 ] - [ ERROR ]  连接失败，请检查是否可以访问：timeout: socket is not established
+2019-11-04 23:34:07  [ AWT-EventQueue-0:10021 ] - [ ERROR ]  连接失败，请检查是否可以访问：timeout: socket is not established
